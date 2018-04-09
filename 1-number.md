@@ -2,6 +2,30 @@
 
 두 수를 입력받아 큰 수를 반환하는 함수를 작성하세요.
 
+---
+```js
+function larger(x, y) {
+  if (x > y){
+    return x; // x가 크면 x를 반환
+  } else {
+    return y; // 아니면 y를 반환
+  }
+}
+
+function larger(x, y) {
+  const result = Math.max(x, y);
+  return result;
+}
+
+function larger(x, y) {
+  return = Math.max(x, y);
+}
+
+function larger(x, y) {
+  return x > y ? x : y; // 삼항 연산자 표현식
+}
+```
+
 ### 문제 2
 
 세 수를 입력받아 그 곱이 양수이면 `true`, 0 혹은 음수이면 `false`, 둘 다 아니면 에러를 발생시키는 함수를 작성하세요.
@@ -10,6 +34,31 @@
 
 ```js
 throw new Error('입력값이 잘못되었습니다.');
+```
+
+---
+```js
+function isPositive(x, y, z) {
+  if (x * y * z > 0){
+    return true; // 곱이 양수 이면 'true'
+  } else if (x * y * z <= 0){
+    return false; // 0 혹은 음수이면 'false'
+  } else {
+    throw new Error('입력값이 잘못되었습니다.'); // 둘 다 아니면 에러
+  }  
+}
+
+function isPositive(x, y, z) {
+  const multi = x * y * z;
+
+  if (multi> 0){
+    return true; // 곱이 양수 이면 'true'
+  } else if (multi <= 0){
+    return false; // 0 혹은 음수이면 'false'
+  } else {
+    throw new Error('입력값이 잘못되었습니다.'); // 둘 다 아니면 에러
+  }  
+}
 ```
 
 ### 문제 3
@@ -26,9 +75,39 @@ limit(3, 7, 11); -> 7
 limit(3, 7, 0); -> 3
 ```
 
-### 문제 4
+---
+```js
+function limit(min, max, input){
+  if (min > input){
+    return min; // - `min`보다 `input`이 작으면, `min`을 반환합니다
+  } else if (max < input) {
+    return max; // - `max`보다 `input`이 크면, `max`를 반환합니다.
+  } else {
+    return input; // - 아니면 `input`을 반환합니다.
+  }
+}
+```
 
+### 문제 4
+ 
 어떤 정수가 짝수인지 홀수인지 출력하는 함수를 작성하세요. 이를 이용해서, 1부터 20까지의 수가 각각 짝수인지 홀수인지 출력하는 프로그램을 작성하세요.
+
+---
+```js
+function printEvenOrOdd(x){
+  if (x % 2 === 0){
+    console.log(x + ' = 짝수'); // 나머지가 0 이면짝수
+  } else {
+    console.log(`숫자 ${x} = 홀수`); // 아니면 홀수
+  }
+}
+
+let i = 0;
+while (i < 20){
+  printEvenOrOdd(i + 1);
+  i++;
+}
+```
 
 ### 문제 5
 
