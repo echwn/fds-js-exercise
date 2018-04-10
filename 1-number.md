@@ -86,6 +86,21 @@ function limit(min, max, input){
     return input; // - 아니면 `input`을 반환합니다.
   }
 }
+
+function limit(min, max, input) {
+  switch(true){
+    case min > input :
+      console.log(min);
+      break;
+    case max < input :
+      console.log(max);
+      break;
+    default :
+      return input;
+  }
+}
+
+limit(3,7,5);
 ```
 
 ### 문제 4
@@ -113,6 +128,25 @@ while (i < 20){
 
 100 이하의 자연수 중 3과 5의 공배수를 모두 출력하는 프로그램을 작성하세요.
 
+---
+```js
+for (let i = 0; i < 100; i++){
+  // 3과 5의 공배수인지 확인하고
+  if((i % 3) === 0 && (i % 5) === 0){
+  // 맞으면 출력 
+  console.log(i + 1);
+  }
+}
+
+for (let i = 1; i <= 100; i++){
+  // 3과 5의 공배수인지 확인하고
+  if((i % 3) === 0 && (i % 5) === 0){
+  // 맞으면 출력 
+  console.log(i);
+  }
+}
+```
+
 ### 문제 6
 
 자연수를 입력받아, 그 수의 모든 약수를 출력하는 함수를 작성하세요.
@@ -124,6 +158,21 @@ while (i < 20){
 ### 문제 8
 
 1부터 100까지의 수를 차례대로 출력하되, 자릿수에 3, 6, 9중 하나라도 포함되어 있으면 '짝!'을 대신 출력하는 프로그램을 작성하세요.
+
+---
+```js
+for(let i = 1; i <= 100; i++){
+  const str = i.toString();
+  
+  // 만약에 3, 6, 9 중 하나라고 포함 하면
+  if(str.includes('3') || str.includes('6') || str.includes('9')){
+  // '짝!' 출력
+  console.log('짝!');
+  } else {
+  console.log(i);
+  }
+}
+```
 
 ### 문제 9
 
@@ -148,6 +197,32 @@ while (i < 20){
 * * *
 * * * *
 * * * * *
+```
+
+---
+```js
+function stair(n) {
+  for (let i = 0; i < n; i++) {
+    let str = '';
+    for (let j = 0; j < i + 1; j++) {
+      str += '* ';
+    }
+    console.log(str);
+  }
+}
+
+function stair(n) {
+  for (let i = 0; i < n; i++) {
+    console.log('* '.repeat(i + 1));
+  }
+}
+
+function stair(n) {
+  for (let i = 0; i < n; i++) {
+    const str === '* '.repeat(i + 1)
+    console.log(str);
+  }
+}
 ```
 
 ### 문제 10
@@ -180,6 +255,22 @@ while (i < 20){
    * *
     *
 ```
+---
+```js
+function line(n, i) {
+  const str = ' '.repeat(n - i - 1) + '* '.repeat(i + 1);
+  console.log(str);
+}
+
+function diamond(n) {
+  for (let i = 0; i < n; i++) {
+    line(n, i);
+  }
+  for (let i = n - 2; i >= 0; i--) {
+    line(n, i);
+  }
+}
+```
 
 ### 문제 11
 
@@ -188,6 +279,24 @@ while (i < 20){
 ### 문제 12
 
 세 수를 입력받아 큰 것부터 차례대로 출력하는 함수를 작성하세요.
+---
+
+```js
+function sort(x, y, z) {
+  let larger = x > y ? x : y;
+  let smaller1 = x > y ? y : x;
+  let max = large > z ? larger : z;
+  let smaller2 = larger > z ? z : larger;
+  console.log(max);
+  if (smaller1 > smaller2) {
+    console.log(smaller1);
+    console.log(smaller2);
+  } else {
+    console.log(smaller2);
+    console.log(smaller1);
+  }
+}
+```
 
 ### 문제 13
 
